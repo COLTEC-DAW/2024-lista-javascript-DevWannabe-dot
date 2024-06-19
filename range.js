@@ -2,8 +2,9 @@ function range(min, max, i)
 {
 	let rangeArray = [];
 
-	for(let j = min+1; j < max; j += i){
-		rangeArray[(j-(min+1)) / i] = j;
+	for(let j = min+i; j < max; j += i){
+		rangeArray[(j-(min+i)) / i] = j;
 	}
-	console.log(rangeArray);
+	
+	return rangeArray;
 }

@@ -1,7 +1,12 @@
 function ehPalindromo()
 {
-	let stringArray = prompt("Insira a string a ser conferida:").split('');
-	stringArray = stringArray.reverse();
-	console.log(stringArray.join(''));
+	let str = (prompt("Insira a string a ser conferida:"));
+	let i = 0, j = (str.length)-1;
+
+	while(i < j){
+		if(str.charAt(i) !== str.charAt(j)) return false;
+		i++; j--;
+	}
+	
+	return true;
 }
-ehPalindromo();
