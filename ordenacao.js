@@ -10,6 +10,7 @@ function sort(array, comp)
 				swapped = true;
 			}
 		}
+		// Se, após percorrer todo o array, nenhuma troca foi feita, abortar a ordenação
 		if(swapped === false) break;
 	}
 
@@ -24,15 +25,23 @@ function comp_decrescente(a, b)
 {
 	return (a < b ? 1 : 0);
 }
+
+/**
+ * (2k)+(2k) = 4k
+ * (2k+1)+(2k+1) = 4k+2
+ * (2k)+(2k+1) = 4k + 1
+ * Se, e somente se o último bit da soma for 0, ambos são pares ou ambos são ímpares.
+ */
+
 function comp_crescente_impares(a, b)
 {
-	if((a & 1) && (b & 1)) return (a > b ? 1 : 0);
+	if(!(a+b & 1) && (a & 1)) return (a > b ? 1 : 0);
 
 	return -1;
 }
 function comp_decrescente_pares(a, b)
 {
-	if((a+b & 1) === 0) return (a < b ? 1 : 0);
+	if(!(a+b & 1) && !(a & 1)) return (a < b ? 1 : 0);
 
 	return -1;
 }
