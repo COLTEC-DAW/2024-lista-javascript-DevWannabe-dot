@@ -15,7 +15,7 @@ function mod2(number)
 {
 	let tmp_mod = 2;
 
-	// Propriedade da limitação (se d | a, |d| <= |a| ou d = 0)
+	// Propriedade da limitação (se d | a, |d| <= |a| ou a = 0)
 	while(tmp_mod << 1 <= number){
 		tmp_mod = tmp_mod << 1;
 	}
